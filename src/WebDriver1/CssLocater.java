@@ -1,5 +1,6 @@
 package WebDriver1;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,9 +13,19 @@ System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.ex
 		
 		driver.manage().window().maximize();
 		
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get("https://login.yahoo.com/?.src=ym&.intl=in");
+//		1 css selector by using the tagname anad id value syntax tagname#idvalue
+//		driver.findElement(By.cssSelector("input#login-username")).sendKeys("123@gmail.com");
+//		2 by usinf id value syntac #idvalue
+		driver.findElement(By.cssSelector("#login-username")).sendKeys("123@gmail.com");
 		
-		Thread.sleep(6000);
+		driver.findElement(By.linkText("Create an account")).click();
+		
+		
+		
+		Thread.sleep(3000);
+		
+		driver.close();
 		
 		
 	}
